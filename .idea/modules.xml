@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Boletines_Tema6/Boletin_6.1/Boletin_6.1.iml" filepath="$PROJECT_DIR$/Boletines_Tema6/Boletin_6.1/Boletin_6.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Boletines_Tema6/Boletines_Tema6.iml" filepath="$PROJECT_DIR$/Boletines_Tema6/Boletines_Tema6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tema6_Estructuras_Almac_Complejas.iml" filepath="$PROJECT_DIR$/Tema6_Estructuras_Almac_Complejas.iml" />
+    </modules>
+  </component>
+</project>
