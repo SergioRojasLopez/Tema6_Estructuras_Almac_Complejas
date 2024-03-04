@@ -1,12 +1,13 @@
+package Ej1;
 
 public class Principal {
 
 	public static void main(String[] args) {
 		Equipo equipo1, equipo2, equipo3, equipoFusionado, equipoInterseccion;
 
-		equipo1 = new Equipo("Equipo 1");
-		equipo2 = new Equipo("Equipo 2");
-		equipo3 = new Equipo("Equipo 3");
+		equipo1 = new Equipo("Ej1.Equipo 1");
+		equipo2 = new Equipo("Ej1.Equipo 2");
+		equipo3 = new Equipo("Ej1.Equipo 3");
 
 		try {
 
@@ -22,9 +23,9 @@ public class Principal {
 			System.out.println(equipo2);
 			System.out.println(equipo3);
 
-			equipoFusionado = equipo1.fusionDeEquipos(equipo2, "Equipo 1 unido 2");
+			equipoFusionado = equipo1.fusionDeEquipos(equipo2, "Ej1.Equipo 1 unido 2");
 
-			equipoInterseccion = equipo3.intersecionDeEquipos(equipo2, "Equipo 3 intersecci�n 2");
+			equipoInterseccion = equipo3.intersecionDeEquipos(equipo2, "Ej1.Equipo 3 intersecci�n 2");
 
 			System.out.println(equipoFusionado);
 			System.out.println(equipoInterseccion);
@@ -62,9 +63,9 @@ public class Principal {
 	private static void crearEquipo2(Equipo equipo2) throws EquipoException {
 		Alumno nuevoAlumno;
 		try {
-			nuevoAlumno = new Alumno("5", "Alumno 5");
+			nuevoAlumno = new Alumno("5", "Ej1.Alumno 5");
 			equipo2.insertarAlumno(nuevoAlumno);
-			nuevoAlumno = new Alumno("6", "Alumno 6");
+			nuevoAlumno = new Alumno("6", "Ej1.Alumno 6");
 			equipo2.insertarAlumno(nuevoAlumno);
 			nuevoAlumno = new Alumno("4", "d");
 			equipo2.insertarAlumno(nuevoAlumno);
@@ -79,11 +80,11 @@ public class Principal {
 	private static void crearEquipo3(Equipo equipo3) throws EquipoException {
 		Alumno nuevoAlumno;
 		try {
-			nuevoAlumno = new Alumno("6", "Alumno 6");
+			nuevoAlumno = new Alumno("6", "Ej1.Alumno 6");
 			equipo3.insertarAlumno(nuevoAlumno);
-			nuevoAlumno = new Alumno("12", "Alumno 12");
+			nuevoAlumno = new Alumno("12", "Ej1.Alumno 12");
 			equipo3.insertarAlumno(nuevoAlumno);
-			nuevoAlumno = new Alumno("13", "Alumno 13");
+			nuevoAlumno = new Alumno("13", "Ej1.Alumno 13");
 			equipo3.insertarAlumno(nuevoAlumno);
 			nuevoAlumno = new Alumno("4", "d");
 			equipo3.insertarAlumno(nuevoAlumno);

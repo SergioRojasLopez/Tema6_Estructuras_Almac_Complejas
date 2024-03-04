@@ -1,3 +1,5 @@
+package Ej1;
+
 import java.util.*;
 
 public class Equipo {
@@ -70,7 +72,7 @@ public class Equipo {
 	 *            Otro equipo
 	 * @param nombre
 	 *            Nombre del nuevo equipo intersección
-	 * @return Equipo resultado de la intersección
+	 * @return Ej1.Equipo resultado de la intersección
 	 */
 	public Equipo intersecionDeEquipos(Equipo otro, String nombre) {
 
@@ -79,7 +81,7 @@ public class Equipo {
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("Equipo{");
+		final StringBuilder sb = new StringBuilder("Ej1.Equipo{");
 		sb.append("nombreEquipo='").append(nombreEquipo).append('\'');
 		sb.append(", conjuntoAlumnos=").append(conjuntoAlumnos);
 		sb.append('}');
