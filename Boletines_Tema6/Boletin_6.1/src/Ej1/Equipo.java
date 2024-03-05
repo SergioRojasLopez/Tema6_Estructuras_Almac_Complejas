@@ -1,90 +1,77 @@
 package Ej1;
 
-import java.util.*;
+import java.util.Set;
+import java.util.HashSet;
 
 public class Equipo {
-
-	private String nombreEquipo;
-	private HashSet<Alumno> conjuntoAlumnos;
+	private String nombre;
+	private Set<Alumno> alumnos;
 
 	public Equipo(String nombre) {
-
-		setNombreEquipo(nombre);
-		conjuntoAlumnos = new HashSet<Alumno>();
+		this.nombre = nombre;
+		alumnos = new HashSet<>();
 	}
 
-	public String getNombreEquipo() {
-		return nombreEquipo;
+	public void addAlumno(Alumno alumno) throws AlumnoException {
+		if (!alumnos.add(alumno)) throw new AlumnoException("El alumno ya está incluido en el equipo");
 	}
 
-	public void setNombreEquipo(String nombreEquipo) {
-		this.nombreEquipo = nombreEquipo;
+	public void removeAlumno(Alumno alumno) throws AlumnoException {
+		if (!alumnos.remove(alumno)) throw new AlumnoException("El alumno no existe en el equipo");
 	}
 
-	public void insertarAlumno(Alumno nuevoAlumno) throws EquipoException {
-
-		
+	public Alumno haveAlumno(Alumno alumno) {
+		return alumnos.contains(alumno) ? alumno : null;
 	}
 
-	public void borrarAlumno(Alumno alumnoABorrar) throws EquipoException {
+	public Equipo unionEquipo(Equipo equipoB) throws AlumnoException {
+		Equipo union = new Equipo(nombre + " U " + equipoB.nombre);
+		union.alumnos.addAll(alumnos);
+		union.alumnos.addAll(equipoB.alumnos);
 
-		
+		return union;
 	}
 
-	/**
-	 * Devuelve una cadena con el listado de los Alumnos
-	 * 
-	 * @return Cadena con el listado de Alumnos
-	 */
-	public String listadoDeAlumnos() {
+	public Equipo interseccionEquipo(Equipo equipoB) throws AlumnoException {
+		Equipo union = new Equipo(nombre + " I " + equipoB.nombre);
 
-        return null;
-    }
-	
+		union.alumnos.addAll(alumnos);
+		union.alumnos.retainAll(equipoB.alumnos);
 
-	
-	public Alumno buscarAlumno(Alumno alumnoBuscado){
+        /*for (Alumno a : equipoB.alumnos){
+            if (alumnos.contains(a)) union.addAlumno(a);
+        }*/
 
+		return union;
+	}
 
-        return alumnoBuscado;
-    }
-
-	/**
-	 * Une mi equipo con otro, devolviendo el nuevo equipo creado
-	 * 
-	 * @param otro
-	 *            Otro equipo que se va a unir
-	 * @param nombre
-	 *            Nombre del nuevo equipo
-	 * @return nuevo equipo resultado de unir los dos anteriores
-	 */
-	public Equipo fusionDeEquipos(Equipo otro, String nombre) {
-
-
-        return otro;
-    }
-
-	/**
-	 * Crea un nuevo equipo con los elementos que están en los dos equipos (this
-	 * y otro)
-	 * 
-	 * @param otro
-	 *            Otro equipo
-	 * @param nombre
-	 *            Nombre del nuevo equipo intersección
-	 * @return Ej1.Equipo resultado de la intersección
-	 */
-	public Equipo intersecionDeEquipos(Equipo otro, String nombre) {
-
-        return otro;
-    }
+	public Set<Alumno> getAlumnos() {
+		return alumnos;
+	}
 
 	@Override
 	public String toString() {
-		final StringBuilder sb = new StringBuilder("Ej1.Equipo{");
-		sb.append("nombreEquipo='").append(nombreEquipo).append('\'');
-		sb.append(", conjuntoAlumnos=").append(conjuntoAlumnos);
-		sb.append('}');
-		return sb.toString();
+		return "\nEl equipo " + nombre + getDatosAlumnos();
+	}
+
+	private String getDatosAlumnos() {
+		String base = ", ha reclutado a los siguientes alumnos:\n";
+		StringBuilder cadena = new StringBuilder(base);
+
+		for (Alumno alumno : alumnos) {
+			cadena.append("  ").append(alumno.toString()).append("\n");
+		}
+
+        /*Iterator<Alumno> iterador = alumnos.iterator();
+        while(iterador.hasNext()) {
+            cadena.append("  ").append(iterador.next().toString()).append("\n");
+        }*/
+
+		return base.contentEquals(cadena) ? ", no ha reclutado a ningun alumno." : cadena.toString();
+	}
+
+
+	public String getNombre() {
+		return nombre;
 	}
 }

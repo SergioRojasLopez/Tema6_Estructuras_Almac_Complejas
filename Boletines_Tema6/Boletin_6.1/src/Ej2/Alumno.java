@@ -1,73 +1,39 @@
 package Ej2;
 
-public class Alumno extends Persona{
+import java.util.Objects;
 
+public class Alumno {
+    private String nombre;
+    private String dni;
 
-	
-	private static final int CURSO_MAX_BACHILLERATO = 2;
-	private static final int CURSO_MIN_BACHILLERATO = 1;
-	private static final int CURSO_MIN_CICLO = 1;
-	private static final int CURSO_MAX_CICLO = 2;
-	private static final int CURSO_MIN_ESO = 1;
-	private static final int CURSO_MAX_ESO = 4;
+    public Alumno(String nombre, String dni) {
+        this.nombre = nombre;
+        this.dni = dni;
+    }
 
-	
-	private TipoEnsennanza ensennanza;
-	private int curso;
-	
-	
-	public Alumno(String dni, String nombre, int edad, TipoEnsennanza ensennanza, int curso) throws IESException {
-		super(dni, nombre, edad);
-		this.ensennanza=ensennanza;
-		setCurso(curso);
-	
-	}
+    public String getDni() {
+        return dni;
+    }
 
+    public String getNombre() {
+        return nombre;
+    }
 
-	public TipoEnsennanza getEnsennanza() {
-		return ensennanza;
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Alumno alumno = (Alumno) o;
+        return Objects.equals(nombre, alumno.nombre) && Objects.equals(dni, alumno.dni);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, dni);
+    }
 
-	public int getCurso() {
-		return curso;
-	}
-
-
-	private void setCurso(int curso) throws IESException {
-		int cursoMenor=0, cursoMayor=0;
-		
-		switch (ensennanza){
-		case CICLO:
-			cursoMenor=CURSO_MIN_CICLO;
-			cursoMayor=CURSO_MAX_CICLO;
-			break;
-		case BACHILLERATO:
-			cursoMenor=CURSO_MIN_BACHILLERATO;
-			cursoMayor=CURSO_MAX_BACHILLERATO;
-			break;
-		case ESO:
-			cursoMenor=CURSO_MIN_ESO;
-			cursoMayor=CURSO_MAX_ESO;
-			break;
-		}
-		
-		if ( curso< cursoMenor || curso > cursoMayor){
-			throw new IESException("Valor del curso incorrecto");
-		}
-		this.curso = curso;
-	}
-
-
-	public void enviarCorreo(String msg, Persona personaDestinatario) throws IESException{
-		
-		
-		
-	}
-	
-	
-	
-	
-	
-	
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + " - DNI: " + dni;
+    }
 }
