@@ -15,7 +15,7 @@ public class Main {
         araryList.add(4);
         araryList.add(5);
         araryList.add(6);
-        reverse2(araryList).stream().forEach(i -> System.out.println(i));
+        reverse(araryList).stream().forEach(i -> System.out.println(i));
 
     }
 
@@ -36,7 +36,8 @@ public class Main {
         return arrayNuevo;
     }
 
-    private static <T> ArrayList<T> reverse2(ArrayList<T> arrayOriginal) {
+
+   /* private static <T> ArrayList<T> reverse2(ArrayList<T> arrayOriginal) {
 
         //Variable para pivotar dentro del array
         int cont = 0;
@@ -51,6 +52,6 @@ public class Main {
 
 
         return arrayNuevo;
-    }
+    }*/
 }
 
