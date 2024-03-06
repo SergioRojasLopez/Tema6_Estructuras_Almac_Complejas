@@ -35,9 +35,23 @@ public class Main {
 
         System.out.println("Sin ordenar");
         System.out.println(personas.get(0).leerMensajes());
-        System.out.println("Tras ordenar");
-        System.out.println(personas.get(0).leerMensajesOrdenados());
-        System.out.println("Tras ordenar Alfa");
-        System.out.println(personas.get(0).leerMensajesOrdenadosAlfabeti());
+        //System.out.println("Tras ordenar");
+        //System.out.println(personas.get(0).leerMensajesOrdenados());
+        //System.out.println("Tras ordenar Alfa");
+        //System.out.println(personas.get(0).leerMensajesOrdenadosAlfabeti());
+
+        try{
+            personas.get(0).borrarMensaje(-3);
+        } catch (MensajeException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            personas.get(0).filtrarMensajePorFrase("Hola");
+        } catch (MensajeException e) {
+            throw new RuntimeException(e);
+        }
+
     }
+
 }

@@ -1,6 +1,7 @@
 package Ej3;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public abstract class Persona {
 	private String nombre;
@@ -58,6 +59,47 @@ public abstract class Persona {
 		for (int i = 0; i < bandejaOrdenada.size(); i++) {
 			mensajes.append("Mensaje ").append(i + 1).append(": ").append(bandejaOrdenada.get(i)).append("\n");
 		}
+
+		return mensajes.toString();
+	}
+	
+	public void borrarMensaje (int numero)throws MensajeException{
+	try {
+		bandejaEntrada.remove(numero - 1);
+
+	}catch (IndexOutOfBoundsException e){
+
+		throw new MensajeException("No existe ese mensaje");
+	}
+
+	}
+
+	public String filtrarMensajePorFrase(String frase)throws MensajeException{
+		StringBuilder mensajes = new StringBuilder();
+
+		//bandejaEntrada.stream().filter(m -> m.getText().contains(frase)).forEach(m -> mensajes.append("\n").append(m));
+		//bandejaEntrada.stream().map(m -> m.getText())
+
+		bandejaEntrada.stream().map(m -> m.toString())
+				.filter(m -> m.contains(frase))
+				.forEach(m -> mensajes.append("\n").append(m));
+
+		if (mensajes.isEmpty()) throw new MensajeException("No existen mensajes con esa frase");
+
+		return mensajes.toString();
+	}
+
+	public String filtrarMensajeSinFlujo (String frase) throws MensajeException{
+
+		StringBuilder mensajes = new StringBuilder();
+
+		for (int i = 0; i < bandejaEntrada.size(); i++){
+			if (bandejaEntrada.get(i).getText().contains(frase)){
+
+			}
+		}
+
+
 
 		return mensajes.toString();
 	}
