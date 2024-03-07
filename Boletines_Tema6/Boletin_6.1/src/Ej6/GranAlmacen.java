@@ -16,4 +16,11 @@ public class GranAlmacen {
         }
     }
 
+    public void abrirCaja(int numCaja){
+
+        if (numCaja > NUM_CAJAS){
+
+        }
+    }
+
 }
