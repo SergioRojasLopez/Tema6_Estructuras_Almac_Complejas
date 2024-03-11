@@ -10,13 +10,24 @@ public class Caja {
     private boolean abierta;
     private Queue <Integer> cola;
 
+
     public Caja(int numeroCaja) {
         this.numeroCaja = numeroCaja;
         this.abierta = false;
         this.cola = new LinkedList<>();
     }
 
+    public boolean isAbierta() {
+        return abierta;
+    }
 
+    public int getCliente() {
+        return cola.size();
+    }
+
+    public int getNumeroCaja() {
+        return numeroCaja;
+    }
 
     public void abrirCaja () throws CajaException{
 
