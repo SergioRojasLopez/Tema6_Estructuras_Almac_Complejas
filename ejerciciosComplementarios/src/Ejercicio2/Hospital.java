@@ -28,7 +28,7 @@ public class Hospital {
                 posicion++;
             }
 
-        }
+        }colaPacientes.add(posicion,nuevoPaciente);
 
     }
 }
