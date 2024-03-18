@@ -52,7 +52,7 @@ public class Hospital {
         StringBuilder datos = new StringBuilder();
         for (int i = 0; i < Paciente.MIN_PRIORIDAD; i++){
             int finalI = i;
-            List<Paciente> pacienteFiltrado = colaPacientes.stream().filter(p->p.getPrioridad() == finalI)
+            List<Paciente> pacienteFiltrado = colaPacientes.stream().filter(p->p.getPrioridad() == finalI).toList();
             datos.append(" \n Hay")
                     .append(pacienteFiltrado.stream().filter(p->p.getPrioridad() == finalI).count())
                     .append(" pacientes esperando por prioridad")
