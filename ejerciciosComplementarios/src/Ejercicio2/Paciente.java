@@ -31,6 +31,10 @@ public class Paciente implements Comparable <Paciente> {
         this.prioridad = prioridad;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
     public int getPrioridad() {
         return prioridad;
     }
