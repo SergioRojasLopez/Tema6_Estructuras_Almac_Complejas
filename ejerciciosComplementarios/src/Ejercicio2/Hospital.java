@@ -53,17 +53,18 @@ public class Hospital {
         for (int i = 0; i < Paciente.MIN_PRIORIDAD; i++){
             int finalI = i;
             List<Paciente> pacienteFiltrado = colaPacientes.stream().filter(p->p.getPrioridad() == finalI)
-            datos.append("Hay")
+            datos.append(" \n Hay")
                     .append(pacienteFiltrado.stream().filter(p->p.getPrioridad() == finalI).count())
                     .append(" pacientes esperando por prioridad")
                     .append(i);
-            datos.append("El paciente mas adulto es: ")
+            datos.append(" \n El paciente mas adulto es: ")
                     .append(pacienteFiltrado.stream().mapToInt(Paciente::getEdad).max())
                     .append(" y el paciente mas joven es :")
                     .append(pacienteFiltrado.stream().mapToInt(Paciente::getEdad).min())
                     .append(" Y la media de edad es: ")
                     .append(pacienteFiltrado.stream().mapToInt(Paciente::getEdad).average().orElse(0));
         }
+        return datos.toString();
     }
 }
 
