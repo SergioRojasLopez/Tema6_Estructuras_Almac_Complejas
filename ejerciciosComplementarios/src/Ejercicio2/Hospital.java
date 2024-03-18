@@ -38,19 +38,16 @@ public class Hospital {
     }
 
     public List<Paciente> listadoPacientesPrioridad(){
-
         return (LinkedList<Paciente>) colaPacientes.clone();
 
     }
 
     public Paciente atenderPaciente(){
-
         return colaPacientes.poll();
 
     }
 
     public List<Paciente> listadoPacientesEdad (){
-
         return colaPacientes.stream().sorted((p1,p2)-> p2.getEdad() - p1.getEdad()).toList();
 
     }

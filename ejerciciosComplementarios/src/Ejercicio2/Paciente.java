@@ -19,15 +19,12 @@ public class Paciente implements Comparable <Paciente> {
         this.edad = edad;
         this.ordenLlegada = ordenLlegada;
         setPrioridad(prioridad);
-
-
     }
 
     public void setPrioridad(int prioridad) {
         if (prioridad > MIN_PRIORIDAD || prioridad < MAX_PRIORIDAD){
             throw new RuntimeException("Valor incorrecto");
         }
-
         this.prioridad = prioridad;
     }
 
