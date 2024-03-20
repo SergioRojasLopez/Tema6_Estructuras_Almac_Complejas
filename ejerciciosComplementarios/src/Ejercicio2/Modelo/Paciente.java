@@ -1,7 +1,4 @@
-package Ejercicio2;
-
-import java.util.LinkedList;
-import java.util.List;
+package Ejercicio2.Modelo;
 
 public class Paciente implements Comparable <Paciente> {
 

@@ -1,9 +1,8 @@
-package Ejercicio2;
+package Ejercicio2.Modelo;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Hospital {
 
