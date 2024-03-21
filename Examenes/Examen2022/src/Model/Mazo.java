@@ -72,14 +72,14 @@ public class Mazo {
                 .average().orElseThrow(() -> new MazoException("No hay jugadores de ese equipo"));
     }
 
-    public List <Cromo> getLista (Cromo cromo){
+    public List <Cromo> getLista (){
         
     }
-    public List <Cromo> ordenar (Cromo cromo){
+    public List <Cromo> ordenar (){
 
     }
 
-    public List <Cromo> equipoCompleto (String nombre){
+    public List <Cromo> equipoCompleto (){
 
 
     }

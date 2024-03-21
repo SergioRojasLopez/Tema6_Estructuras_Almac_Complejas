@@ -6,6 +6,10 @@ import java.util.Scanner;
 
 
 import Excepciones.MazoException;
+import Model.Cromo;
+import Model.Escudo;
+import Model.Jugador;
+import Model.Mazo;
 
 public class Principal {
 
