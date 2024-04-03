@@ -19,11 +19,22 @@ public class Jugador extends Cromo{
         return equipo;
     }
 
-    public String getNombreJugador() {
-        return nombreJugador;
+    @Override
+    public String getNombre() {
+        return null;
     }
 
     public int getAltura() {
         return altura;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Jugador{");
+        sb.append("Jugador='").append(nombreJugador).append('\'');
+        sb.append(", equipo='").append(equipo).append('\'');
+        sb.append(", altura=").append(altura);
+        sb.append('}');
+        return sb.toString();
     }
 }

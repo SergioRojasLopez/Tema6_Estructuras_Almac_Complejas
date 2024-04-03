@@ -7,6 +7,7 @@ public abstract class Cromo {
     public Cromo(String id) {
         this.id = id;
     }
+    public abstract String getNombre();
 
     public abstract String getEquipo();
 }
